@@ -42,8 +42,8 @@ env:
   REPO_URL: https://github.com/project-openwrt/openwrt
   REPO_BRANCH: openwrt-18.06
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: Janver-419.config
-  DIY_OP_SH: Janver-419.sh 
+  CONFIG_FILE: janver-419.config
+  DIY_OP_SH: janver-419.sh 
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
   UPLOAD_CONFIG: true
