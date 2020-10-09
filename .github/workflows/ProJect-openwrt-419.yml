@@ -54,7 +54,7 @@ env:
 
 jobs:
   build:
-    name: 编译OpenWrt-project固件
+    name: 编译OpenWrt-18.06固件
     runs-on: ubuntu-18.04
     if: github.event.repository.owner.id == github.event.sender.id
 
@@ -95,7 +95,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
-    - name: themes主题进程
+    - name: 编译theme-material主题
       run: |
        cd openwrt
        git clone https://github.com/kfen/kfen-luci-theme-material.git
