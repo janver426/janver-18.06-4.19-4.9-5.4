@@ -147,7 +147,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organizer.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true'
       with:
-        name: ProJect_firmware_${{ env.DEVICE_NAME }}_${{ env.FILE_DATE }}
+        name: immortalwrt_firmware_${{ env.DEVICE_NAME }}_${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: 上传固件到奶牛快传
