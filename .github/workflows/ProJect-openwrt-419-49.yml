@@ -21,7 +21,7 @@ on:
       - 'janver-419-49.config'
 
 env:
-  REPO_URL: https://github.com/project-openwrt/openwrt.git
+  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: openwrt-18.06
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: janver-419-49.config
