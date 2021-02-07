@@ -79,7 +79,7 @@ jobs:
         
     - name: 编译theme-material主题
       run: |
-       cd openwrt
+       cd immortalwrt
        git clone https://github.com/kfen/kfen-luci-theme-material.git
 
     - name: 加载janver-419-49.config设置
@@ -135,7 +135,7 @@ jobs:
     - name: 整理固件文件夹
       id: organizer
       run: |
-        cd openwrt/bin/targets/*/*
+        cd immortalwrt/bin/targets/*/*
         rm -rf packages && mkdir packages
         find -name "*.buildinfo*" | xargs -i mv -f {} packages
         find -name "*sha256sums*" | xargs -i mv -f {} packages
