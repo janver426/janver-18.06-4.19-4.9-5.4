@@ -21,7 +21,7 @@ sed -i 's/192.168.1.1/192.168.100.1/g' ./package/base-files/files/bin/config_gen
 
 
 # 修改内核版本（版本内核默认4.19，还有4.14跟4.9内核）
-#sed -i 's/KERNEL_PATCHVER:=4.19/KERNEL_PATCHVER:=4.9/g' ./target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=4.19/KERNEL_PATCHVER:=4.9/g' ./target/linux/x86/Makefile
 
 
 # 删除已知的重复文件
