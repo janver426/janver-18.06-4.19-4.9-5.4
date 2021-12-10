@@ -76,11 +76,6 @@ jobs:
       
     - name: 安装feeds自定义插件  
       run: cd immortalwrt && ./scripts/feeds install -a
-            
-    - name: 编译theme-material主题
-      run: |
-       cd immortalwrt
-       git clone https://github.com/kfen/kfen-luci-theme-material.git
 
     - name: 加载janver-419-49.config设置
       run: |
