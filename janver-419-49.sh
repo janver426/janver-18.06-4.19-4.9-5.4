@@ -26,3 +26,4 @@ sed -i 's/KERNEL_PATCHVER:=4.19/KERNEL_PATCHVER:=4.9/g' ./target/linux/x86/Makef
 
 # 删除已知的重复文件
 rm -rf ./package/lienol/luci-app-timecontrol
+rm -rf ./package/kernel/mac80211
