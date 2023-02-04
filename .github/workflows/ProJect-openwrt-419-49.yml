@@ -37,7 +37,8 @@ env:
 jobs:
   build:
     name: 编译OpenWrt-18.06固件
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    container: node:16.16.0
     if: github.event.repository.owner.id == github.event.sender.id
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
