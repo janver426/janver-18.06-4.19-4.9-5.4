@@ -37,8 +37,7 @@ env:
 jobs:
   build:
     name: 编译OpenWrt-18.06固件
-    runs-on: ubuntu-latest
-    container: node:16.16.0
+    runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
@@ -187,6 +186,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        name: ${{ steps.tag.outputs.release_date }} x86-64-Linux-${{ steps.generate.outputs.kernel_version }} 固件
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
