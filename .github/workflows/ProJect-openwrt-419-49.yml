@@ -39,10 +39,17 @@ jobs:
     name: 编译OpenWrt-18.06固件
     runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id
-
+    outputs:
+      OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
+      PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
+      TARGET: ${{ steps.compile.outputs.TARGET }}
+      SUBTARGET: ${{ steps.compile.outputs.SUBTARGET }}
+      FIRMWARE: ${{ steps.compile.outputs.FIRMWARE }}
+      GENERATE_STATUS: ${{ steps.generate.outputs.GENERATE_STATUS }}
+      
     steps:
     - name: 准备结束
-      uses: actions/checkout@main
+      uses: actions/checkout@v3
 
     - name: 开始安装编译所需系统
       env:
@@ -184,13 +191,13 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: 删除工作流运行
-      uses: GitRML/delete-workflow-runs@main
+      uses: GitRML/delete-workflow-runs@v2
       with:
         retain_days: 1
         keep_minimum_runs: 3
 
     - name: 删除旧版本
-      uses: dev-drprasad/delete-older-releases@v0.1.0
+      uses: dev-drprasad/delete-older-releases@v0.2.1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 3
