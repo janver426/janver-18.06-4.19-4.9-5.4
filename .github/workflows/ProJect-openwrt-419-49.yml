@@ -118,7 +118,7 @@ jobs:
       run: |
           rm -rf config && mkdir config
           find immortalwrt/bin/targets/ -name "*config.buildinfo*" | xargs -i mv -f {} config
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
           
     - name: 上传.config配置文件在github空间    
       if: steps.config.outputs.status == 'success' && env.UPLOAD_CONFIG == 'true'
