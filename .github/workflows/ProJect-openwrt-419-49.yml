@@ -42,7 +42,7 @@ jobs:
      
     steps:
     - name: 准备结束
-      uses: actions/checkout@main
+      uses: actions/checkout@v3
   
     - name: 开始安装编译所需系统
       env:
@@ -167,6 +167,8 @@ jobs:
     - name: 删除工作流运行
       uses: Mattraks/delete-workflow-runs@main
       with:
+        token: ${{ github.token }}
+        repository: ${{ github.repository }}
         retain_days: 1
         keep_minimum_runs: 3
 
