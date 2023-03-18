@@ -37,7 +37,11 @@ jobs:
     name: 编译OpenWrt-18.06固件
     runs-on: ubuntu-20.04
     permissions:
+       pull-requests: write
+       checks: write
+       actions: write
        contents: write
+       discussions: write
     if: github.event.repository.owner.id == github.event.sender.id
      
     steps:
